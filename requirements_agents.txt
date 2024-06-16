@@ -1,2 +1,1 @@
-!pip -q install langchain openai
-!pip install langchain-experimental
+
