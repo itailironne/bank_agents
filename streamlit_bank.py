@@ -36,7 +36,7 @@ st.markdown('<p class="big-font">CSV Data Query Tool</p>', unsafe_allow_html=Tru
 st.write("This tool allows you to upload a CSV file and ask questions about its contents. Please upload your file and enter your question below.")
 
 # Retrieve the API key securely from environment variables
-#api_key = ""
+api_key = os.getenv("OPENAI_API_KEY")
 if not api_key:
     st.error("API key not found. Please ensure the OPENAI_API_KEY environment variable is set.")
     st.stop()
@@ -71,25 +71,3 @@ if uploaded_file is not None and user_question:
             st.info("Answer: " + answer)
         except Exception as e:
             st.error(f"An error occurred: {str(e)}")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
